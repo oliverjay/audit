@@ -74,7 +74,7 @@ function cacheKey(url: string, persona: string) {
 const PERSIST_PREFIX = "audit-cache::";
 const CHAPTER_AUDIO_PREFIX = "audit-chaudio::";
 const SCRAPE_CACHE_KEY = "audit-scrape-cache";
-const CACHE_VERSION = 23;
+const CACHE_VERSION = 24;
 
 function consumeScrapeData(url: string): Record<string, unknown> | null {
   try {

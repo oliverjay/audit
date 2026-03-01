@@ -274,11 +274,16 @@ function postProcessAudit(
     if (ch.scrollY == null) ch.scrollY = 0;
   }
 
-  const originalOrder = audit.chapters.map((ch, i) => ({ ...ch, origIndex: i }));
-  originalOrder.sort((a, b) => a.scrollY - b.scrollY);
+  // Chapter 0 is the intro greeting — always keep it first.
+  // Sort only chapters 1+ by scrollY for a general top-to-bottom flow.
+  const introChapter = audit.chapters[0];
+  const rest = audit.chapters.slice(1).map((ch, i) => ({ ...ch, origIndex: i + 1 }));
+  rest.sort((a, b) => a.scrollY - b.scrollY);
+
   const indexMap = new Map<number, number>();
-  originalOrder.forEach((ch, newIdx) => indexMap.set(ch.origIndex, newIdx));
-  audit.chapters = originalOrder.map(({ origIndex: _o, ...rest }) => rest);
+  indexMap.set(0, 0);
+  rest.forEach((ch, sortedIdx) => indexMap.set(ch.origIndex, sortedIdx + 1));
+  audit.chapters = [introChapter, ...rest.map(({ origIndex: _o, ...r }) => r)];
 
   audit.hotspots = audit.hotspots.map((h) => ({
     ...h,
@@ -307,12 +312,7 @@ function postProcessAudit(
   audit.script = remappedScript;
 
   if (audit.chapters.length > 0 && audit.chapters[0].scrollY > 5) {
-    console.warn(`[analyze] Clamping chapter 0 scrollY from ${audit.chapters[0].scrollY} to 0`);
     audit.chapters[0].scrollY = 0;
-  }
-  if (audit.chapters.length > 1 && audit.chapters[1].scrollY > 10) {
-    console.warn(`[analyze] Clamping chapter 1 scrollY from ${audit.chapters[1].scrollY} to 5`);
-    audit.chapters[1].scrollY = 5;
   }
 
   console.log("[analyze] chapters:", audit.chapters.map((ch, i) => ({
