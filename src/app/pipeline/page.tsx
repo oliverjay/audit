@@ -421,7 +421,7 @@ function LeadsTab({
   const [countryFilter, setCountryFilter] = useState("all");
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
-  const searchTimeout = useRef<ReturnType<typeof setTimeout>>();
+  const searchTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   const fetchLeads = useCallback(async (p: number, state: string, country: string, q: string) => {
     setLoading(true);
