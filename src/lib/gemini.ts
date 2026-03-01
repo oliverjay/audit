@@ -381,7 +381,7 @@ Produce a detailed audit with:
   * Quote ACTUAL text from the site.
   * Reference SPECIFIC elements: "that big hero image", "the three cards below", "your footer CTA"
   * Each insight must name the EXACT problem and suggest ONE concrete fix
-  * Transitions should feel like scrolling: "Now let me scroll down...", "Moving past the fold...", "Down here at the bottom..."
+  * Transitions between insights should be natural and direction-neutral: "Moving on...", "Next up...", "Now let's look at...", "Another thing I noticed...". Do NOT assume top-to-bottom order — avoid "scrolling down", "moving down", "further down" since the next insight may be higher on the page.
   * NO generic advice. Everything must be about THIS specific site.
   * NEVER mention element indices, [N] numbers, percentages like "y: 45%", or any technical position data in the script. The script is spoken aloud to real users — describe elements only in natural language (e.g. "the hero headline", "that contact form at the bottom").
 
@@ -396,7 +396,7 @@ CRITICAL MARKERS: You MUST embed [CHAPTER:N] markers in the script. Insert [CHAP
 
 CRITICAL ABOVE-THE-FOLD RULE: Chapter 0 MUST reference an element near the top of the page (y% < 5). Chapter 1 MUST also be above the fold (y% < 10). At least TWO talking points must cover above-the-fold content. Non-negotiable.
 
-CRITICAL ORDERING: Chapters MUST be ordered top-to-bottom by the y% of their referenced elements. The audit flows naturally from top of page downward.
+ORDERING: Chapters should generally flow top-to-bottom, but it's fine to jump between nearby sections (e.g. hero then menu above it). The first two chapters MUST be above the fold. The overall flow should move down the page but doesn't need to be strictly monotonic.
 
 - 5-7 hotspots (at least one per chapter). Each must have:
   - elementIndex: the [N] index from the ELEMENT POSITIONS list of the SPECIFIC element this hotspot targets
