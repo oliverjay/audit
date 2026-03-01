@@ -1,28 +1,25 @@
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy — Audit AI",
-};
+import { SiteNav } from "@/components/ui/site-nav";
+import { SiteFooter } from "@/components/ui/site-footer";
 
 export default function PrivacyPage() {
   return (
-    <div className="mx-auto max-w-2xl px-6 py-20">
-      <a href="/" className="text-sm text-muted hover:text-foreground">
-        &larr; Back
-      </a>
-
-      <h1 className="mt-8 text-3xl font-bold tracking-tight text-foreground">
+    <div className="bg-neutral-950 min-h-dvh">
+      <SiteNav />
+      <div className="mx-auto max-w-xl px-6 py-20">
+      <h1 className="text-3xl font-bold tracking-tight text-foreground">
         Privacy Policy
       </h1>
       <p className="mt-2 text-sm text-muted">Last updated: February 2026</p>
 
-      <div className="mt-10 space-y-8 text-sm leading-relaxed text-foreground/80">
+      <div className="mt-10 space-y-8 text-sm leading-relaxed text-muted">
         <section>
-          <h2 className="mb-2 text-base font-semibold text-foreground">
+          <h2 className="mb-2 text-sm font-semibold text-foreground">
             1. Information We Collect
           </h2>
           <p>
-            When you use Audit AI, we collect the URLs you submit for analysis.
+            When you use Retake, we collect the URLs you submit for analysis.
             We do not require account creation or collect personal identification
             information. We may collect anonymous usage analytics data including
             page views and feature usage.
@@ -30,7 +27,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="mb-2 text-base font-semibold text-foreground">
+          <h2 className="mb-2 text-sm font-semibold text-foreground">
             2. How We Use Your Information
           </h2>
           <p>
@@ -41,7 +38,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="mb-2 text-base font-semibold text-foreground">
+          <h2 className="mb-2 text-sm font-semibold text-foreground">
             3. Third-Party Data Sharing
           </h2>
           <p>
@@ -56,7 +53,7 @@ export default function PrivacyPage() {
               content generation
             </li>
             <li>
-              <strong>ElevenLabs</strong> — for text-to-speech voiceover generation
+              <strong>OpenAI</strong> — for text-to-speech voiceover generation
             </li>
           </ul>
           <p className="mt-2">
@@ -65,7 +62,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="mb-2 text-base font-semibold text-foreground">
+          <h2 className="mb-2 text-sm font-semibold text-foreground">
             4. Cookies
           </h2>
           <p>
@@ -76,7 +73,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="mb-2 text-base font-semibold text-foreground">
+          <h2 className="mb-2 text-sm font-semibold text-foreground">
             5. Data Retention
           </h2>
           <p>
@@ -87,7 +84,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="mb-2 text-base font-semibold text-foreground">
+          <h2 className="mb-2 text-sm font-semibold text-foreground">
             6. Your Rights (GDPR / CCPA)
           </h2>
           <p>
@@ -100,7 +97,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="mb-2 text-base font-semibold text-foreground">
+          <h2 className="mb-2 text-sm font-semibold text-foreground">
             7. Children&apos;s Privacy
           </h2>
           <p>
@@ -110,7 +107,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="mb-2 text-base font-semibold text-foreground">
+          <h2 className="mb-2 text-sm font-semibold text-foreground">
             8. Changes to This Policy
           </h2>
           <p>
@@ -119,6 +116,8 @@ export default function PrivacyPage() {
           </p>
         </section>
       </div>
+      </div>
+      <SiteFooter showCredit={false} />
     </div>
   );
 }

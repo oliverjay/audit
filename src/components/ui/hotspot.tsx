@@ -10,7 +10,7 @@ interface HotspotProps {
   active: boolean;
 }
 
-export function Hotspot({ x, y, label, score, active }: HotspotProps) {
+export function Hotspot({ x, y, score, active }: HotspotProps) {
   if (!active) return null;
 
   const color =
@@ -19,8 +19,6 @@ export function Hotspot({ x, y, label, score, active }: HotspotProps) {
       : score >= 40
         ? "rgb(234, 179, 8)"
         : "rgb(239, 68, 68)";
-
-  const nearBottom = y > 75;
 
   return (
     <motion.div
@@ -40,19 +38,6 @@ export function Hotspot({ x, y, label, score, active }: HotspotProps) {
           style={{ backgroundColor: color }}
         />
       </div>
-      <motion.div
-        initial={{ opacity: 0, y: nearBottom ? -8 : 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
-        className={`glass absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded-lg px-3 py-1.5 text-xs font-medium text-foreground shadow-lg ${
-          nearBottom ? "bottom-8" : "top-8"
-        }`}
-      >
-        {label}
-        <span className="ml-2 font-bold" style={{ color }}>
-          {score}
-        </span>
-      </motion.div>
     </motion.div>
   );
 }

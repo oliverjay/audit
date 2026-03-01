@@ -1,0 +1,11 @@
+{
+  "name": "Retake",
+  "short_name": "Retake",
+  "icons": [
+    { "src": "/favicon/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicon/favicon-512.jpg", "sizes": "512x512", "type": "image/jpeg" }
+  ],
+  "theme_color": "#0a0a0a",
+  "background_color": "#0a0a0a",
+  "display": "standalone"
+}

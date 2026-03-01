@@ -1,38 +1,35 @@
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Terms of Service — Audit AI",
-};
+import { SiteNav } from "@/components/ui/site-nav";
+import { SiteFooter } from "@/components/ui/site-footer";
 
 export default function TermsPage() {
   return (
-    <div className="mx-auto max-w-2xl px-6 py-20">
-      <a href="/" className="text-sm text-muted hover:text-foreground">
-        &larr; Back
-      </a>
-
-      <h1 className="mt-8 text-3xl font-bold tracking-tight text-foreground">
+    <div className="bg-neutral-950 min-h-dvh">
+      <SiteNav />
+      <div className="mx-auto max-w-xl px-6 py-20">
+      <h1 className="text-3xl font-bold tracking-tight text-foreground">
         Terms of Service
       </h1>
       <p className="mt-2 text-sm text-muted">Last updated: February 2026</p>
 
-      <div className="mt-10 space-y-8 text-sm leading-relaxed text-foreground/80">
+      <div className="mt-10 space-y-8 text-sm leading-relaxed text-muted">
         <section>
-          <h2 className="mb-2 text-base font-semibold text-foreground">
+          <h2 className="mb-2 text-sm font-semibold text-foreground">
             1. Acceptance of Terms
           </h2>
           <p>
-            By accessing or using Audit AI (&ldquo;the Service&rdquo;), you agree to be bound by
+            By accessing or using Retake (&ldquo;the Service&rdquo;), you agree to be bound by
             these Terms of Service. If you do not agree, please do not use the Service.
           </p>
         </section>
 
         <section>
-          <h2 className="mb-2 text-base font-semibold text-foreground">
+          <h2 className="mb-2 text-sm font-semibold text-foreground">
             2. Service Description
           </h2>
           <p>
-            Audit AI provides automated website analysis using artificial intelligence.
+            Retake provides automated website analysis using artificial intelligence.
             The Service scrapes publicly accessible web pages, generates visual and
             textual analysis, and produces AI-generated voiceover commentary. Results
             are for informational purposes only and do not constitute professional advice.
@@ -40,7 +37,7 @@ export default function TermsPage() {
         </section>
 
         <section>
-          <h2 className="mb-2 text-base font-semibold text-foreground">
+          <h2 className="mb-2 text-sm font-semibold text-foreground">
             3. Acceptable Use
           </h2>
           <p>
@@ -51,11 +48,11 @@ export default function TermsPage() {
         </section>
 
         <section>
-          <h2 className="mb-2 text-base font-semibold text-foreground">
+          <h2 className="mb-2 text-sm font-semibold text-foreground">
             4. Third-Party Services
           </h2>
           <p>
-            The Service relies on third-party APIs including Google Gemini, ElevenLabs,
+            The Service relies on third-party APIs including Google Gemini, OpenAI,
             and Firecrawl. We are not responsible for the availability, accuracy, or
             policies of these third-party services. Your use of the Service is also
             subject to their respective terms and policies.
@@ -63,7 +60,7 @@ export default function TermsPage() {
         </section>
 
         <section>
-          <h2 className="mb-2 text-base font-semibold text-foreground">
+          <h2 className="mb-2 text-sm font-semibold text-foreground">
             5. Intellectual Property
           </h2>
           <p>
@@ -74,7 +71,7 @@ export default function TermsPage() {
         </section>
 
         <section>
-          <h2 className="mb-2 text-base font-semibold text-foreground">
+          <h2 className="mb-2 text-sm font-semibold text-foreground">
             6. Disclaimer of Warranties
           </h2>
           <p>
@@ -85,17 +82,17 @@ export default function TermsPage() {
         </section>
 
         <section>
-          <h2 className="mb-2 text-base font-semibold text-foreground">
+          <h2 className="mb-2 text-sm font-semibold text-foreground">
             7. Limitation of Liability
           </h2>
           <p>
-            In no event shall Audit AI be liable for any indirect, incidental,
+            In no event shall Retake be liable for any indirect, incidental,
             special, or consequential damages arising from your use of the Service.
           </p>
         </section>
 
         <section>
-          <h2 className="mb-2 text-base font-semibold text-foreground">
+          <h2 className="mb-2 text-sm font-semibold text-foreground">
             8. Changes to Terms
           </h2>
           <p>
@@ -104,6 +101,8 @@ export default function TermsPage() {
           </p>
         </section>
       </div>
+      </div>
+      <SiteFooter showCredit={false} />
     </div>
   );
 }

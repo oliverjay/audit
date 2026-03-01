@@ -1,5 +1,5 @@
 {
-  "name": "audit-app",
+  "name": "retake",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,10 +11,13 @@
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "@mendable/firecrawl-js": "^4.13.1",
+    "@supabase/supabase-js": "^2.97.0",
     "framer-motion": "^12.34.3",
     "geist": "^1.7.0",
-    "lightningcss-darwin-arm64": "^1.31.1",
+    "linkedom": "^0.18.12",
+    "lucide-react": "^0.575.0",
     "next": "16.1.6",
+    "openai": "^6.25.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "zustand": "^5.0.11"
