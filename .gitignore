@@ -36,6 +36,9 @@ yarn-error.log*
 # local data
 /data/
 
+# supabase local
+supabase/.temp/
+
 # vercel
 .vercel
 
